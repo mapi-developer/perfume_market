@@ -2,15 +2,11 @@ from django.http import HttpResponse, request
 from django.shortcuts import render
 
 def index(request: request):
-    context = {
-        'title': 'Home',
-        'content': 'Market Main Page',
-        'list': ['first', 'second'],
-        'dict': {'first': 1},
-        'bool': True,
-    }
-
-    return render(request, 'main/index.html', context)
+    return render(request, 'main/index.html')
 
 def about(request: request):
-    return HttpResponse('About page')
+   context = {
+       'content': 'About Us',
+       'text_on_page': 'Best market exist.'
+   }
+   return render(request, 'main/about.html', context)
