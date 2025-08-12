@@ -1,8 +1,6 @@
 from django.http import request
 from django.shortcuts import render
 
-from goods.models import Categories
-
 def index(request: request):
     return render(request, 'main/index.html')
 
