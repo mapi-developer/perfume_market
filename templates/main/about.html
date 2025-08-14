@@ -1,13 +1,16 @@
-{% extends "main/base.html" %}
+{% extends "base.html" %}
 {% load static %}
 
 {% block css %}
     <link rel="stylesheet" href="{% static "deps/css/my_footer_css.css" %}">
-    <title>Home</title>
+    <title>About</title>
 {% endblock %}
 
 {% block content %}
-    <h1 class="mt-5 pt-5"><strong>Магазин мебели HOME</strong></h1>
+    <div class="mt-5 bg-white custom-shadow rounded">
+        <h2 class="m-2"><strong>{{ content }}</strong></h2>
+        <p class="m-2">{{ text_on_page }}</p>
+    </div>
 {% endblock  %}
 
 {% block footer %}
