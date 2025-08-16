@@ -12,7 +12,7 @@ def catalog(request: request, category_slug=None):
     on_sale = request.GET.get('on_sale', None)
     order_by = request.GET.get('order_by', 'id')
     query = request.GET.get('q', None)
-    print(query)
+
     if category_slug == 'all' or query == "":
         goods = Products.objects.all()
     elif query:
@@ -22,7 +22,7 @@ def catalog(request: request, category_slug=None):
         goods = Products.objects.filter(category__slug=category_slug)
         if not goods.exists():
             raise Http404("No products found.")
-    print(category_slug)
+
     if on_sale:
         goods = goods.filter(discount__gt=0)
     if order_by:
